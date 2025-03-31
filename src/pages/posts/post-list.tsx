@@ -4,11 +4,29 @@ import {
   ReferenceField,
   TextField,
   FunctionField,
+  useRecordContext,
 } from "react-admin";
+
+const PostPanel = () => {
+  const record = useRecordContext();
+  return (
+    <div>
+      <h1>Post details</h1>
+      <p>{record?.body}</p>
+    </div>
+  );
+};
 
 const PostList = () => (
   <List>
-    <Datagrid>
+    <Datagrid
+      expand={<PostPanel />}
+      sx={{
+        ".RaDatagrid-headerCell": {
+          padding: "16px",
+        },
+      }}
+    >
       <TextField source="id" />
       <TextField source="title" label="Post title" />
       <FunctionField
