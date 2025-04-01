@@ -5,6 +5,7 @@ import {
   TextField,
   FunctionField,
   useRecordContext,
+  EditButton,
 } from "react-admin";
 
 /* const PostPanel = () => {
@@ -35,6 +36,7 @@ const PostList = () => (
         source="body"
       />
       <ReferenceField source="userId" reference="users" />
+      <EditButton />
     </Datagrid>
   </List>
 );
