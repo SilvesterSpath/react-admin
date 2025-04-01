@@ -7,7 +7,7 @@ import {
   useRecordContext,
 } from "react-admin";
 
-const PostPanel = () => {
+/* const PostPanel = () => {
   const record = useRecordContext();
   return (
     <div>
@@ -16,16 +16,16 @@ const PostPanel = () => {
     </div>
   );
 };
-
+ */
 const PostList = () => (
   <List>
     <Datagrid
-      expand={<PostPanel />}
+    /*       expand={<PostPanel />}
       sx={{
         ".RaDatagrid-headerCell": {
           padding: "16px",
         },
-      }}
+      }} */
     >
       <TextField source="id" />
       <TextField source="title" label="Post title" />
