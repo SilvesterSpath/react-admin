@@ -12,9 +12,15 @@ import UserCreate from "./pages/users/user-create";
 import ArticleIcon from "@mui/icons-material/Article";
 import PeopleIcon from "@mui/icons-material/People";
 import Homepage from "./pages/homepage";
+import { authProvider } from "./authProvider";
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider} dashboard={Homepage}>
+  <Admin
+    layout={Layout}
+    dataProvider={dataProvider}
+    dashboard={Homepage}
+    authProvider={authProvider}
+  >
     <Resource
       name="posts"
       list={PostList}

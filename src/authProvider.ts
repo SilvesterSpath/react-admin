@@ -1,9 +1,8 @@
 import { AuthProvider } from "react-admin";
 
 export const authProvider: AuthProvider = {
-  // Runs when the user attempts to log in
   login: ({ username, password }) => {
-    if (username === "admin" && password === "admin") {
+    if (username === "admin" && password === "password") {
       localStorage.setItem("username", username);
       return Promise.resolve();
     }
@@ -20,7 +19,10 @@ export const authProvider: AuthProvider = {
     }
     return Promise.resolve();
   },
+  // Runs when the user navigates to a new location to check for authentication
   checkAuth: () =>
     localStorage.getItem("username") ? Promise.resolve() : Promise.reject(),
+
+  // Runs when the user navigates to a new location to check for permissions
   getPermissions: () => Promise.resolve(),
 };
