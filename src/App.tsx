@@ -8,6 +8,7 @@ import UserShow from "./pages/users/user-show";
 import PostEdit from "./pages/posts/post-edit";
 import UserEdit from "./pages/users/user-edit";
 import PostCreate from "./pages/posts/post-create";
+import UserCreate from "./pages/users/user-create";
 
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
@@ -18,6 +19,12 @@ export const App = () => (
       edit={PostEdit}
       create={PostCreate}
     />
-    <Resource name="users" list={UserList} show={UserShow} edit={UserEdit} />
+    <Resource
+      name="users"
+      list={UserList}
+      show={UserShow}
+      edit={UserEdit}
+      create={UserCreate}
+    />
   </Admin>
 );
